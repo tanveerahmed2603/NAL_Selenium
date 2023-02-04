@@ -1,7 +1,10 @@
 package org.example;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class TestAmazon {
     public static void main(String[] args) {
+
 
         BrowseUtil bu = new BrowseUtil();
         bu.openBrowser("chrome");

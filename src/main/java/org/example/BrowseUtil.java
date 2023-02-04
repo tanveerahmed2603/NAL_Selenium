@@ -1,5 +1,6 @@
 package org.example;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -15,12 +16,15 @@ public class BrowseUtil {
      */
     public WebDriver openBrowser(String browser) {
         if (browser.equalsIgnoreCase("chrome")) {
+            WebDriverManager.chromedriver().setup();
             return driver = new ChromeDriver();
         }
         if (browser.equalsIgnoreCase("firefox")) {
+            WebDriverManager.firefoxdriver().setup();
             return driver = new FirefoxDriver();
         }
         if (browser.equalsIgnoreCase("safari")) {
+            WebDriverManager.safaridriver().setup();
             return driver = new SafariDriver();
         }
         return driver;
