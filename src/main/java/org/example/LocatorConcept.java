@@ -63,42 +63,33 @@ public class LocatorConcept {
         String emailLocatorValue = "input-email";
         String passwordLocatorValue = "input-password";
 
-        doSendKeys("id",emailLocatorValue, "test@gmail.com" );
-        doSendKeys("id",passwordLocatorValue, "test@gmail.com" );
+        ElementUtil eu = new ElementUtil(driver);
+
+        eu.doSendKeys("Id",emailLocatorValue, "test@gmail.com" );
+        eu.doSendKeys("id",passwordLocatorValue, "test@gmail.com" );
 
 
     }
 
-    public static By getByLocator(String locatorType, String locatorValue){
-        By locator = null;
-        if ("id".equals(locatorType.toLowerCase())) {
-            locator = By.id(locatorValue);
-        } else {
-            System.out.println("Please enter a proper locator type");
-        }
 
-        return locator;
-
-
-    }
 
 
     //If use 6th approach then these two method is invalid
-    public static WebElement getElement(By locator){
-        return driver.findElement(locator);
-    }
+//    public static WebElement getElement(By locator){
+//        return driver.findElement(locator);
+//    }
 
-    public  static WebElement getElement(String locatorType, String locatorValue){
-        return driver.findElement(getByLocator(locatorType, locatorValue));
-    }
-
-    public static void doSendKeys(By locator, String value) {
-        getElement(locator).sendKeys(value);
-    }
-
-    public static void doSendKeys(String locatorType, String locatorValue, String value) {
-        getElement(locatorType,locatorValue).sendKeys(value);
-    }
+//    public  static WebElement getElement(String locatorType, String locatorValue){
+//        return driver.findElement(getByLocator(locatorType, locatorValue));
+//    }
+//
+//    public static void doSendKeys(By locator, String value) {
+//        getElement(locator).sendKeys(value);
+//    }
+//
+//    public static void doSendKeys(String locatorType, String locatorValue, String value) {
+//        getElement(locatorType,locatorValue).sendKeys(value);
+//    }
 
 
 }
